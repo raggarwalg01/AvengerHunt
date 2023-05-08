@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="how.css">
+</head>
+
+<body>
+    <h1>.- ... --. .- .-. -.. .. ... -. --- - .- .--. .-.. .- -.-. . --..-- .. - .. ... .. - ... .--. . --- .--. .-.. .
+    </h1>
+    <img src="images.jpeg" alt="clock">
+    <h1 class="aas"></h1>
+    <h1 class="aas"></h1>
+    <img src="images.png">
+    <div class="container">
+        <div id="increment-count">
+            <input type="image" id="up-arrow" src="up-arrow.png" />
+        </div>
+        <div id="total-count">
+
+        </div>
+        <div id="decrement-count">
+            <input type="image" id="down-arrow" src="down-arrow.png" />
+        </div>
+    </div>
+    <a href=""><button class="but bn20">Button</button></a>
+    <script>
+        // Select increment and decrement buttons
+        const incrementCount = document.getElementById("increment-count");
+        const decrementCount = document.getElementById("decrement-count");
+
+        // Select total count
+        const totalCount = document.getElementById("total-count");
+
+        // Variable to track count
+        var count = 0;
+
+        // Display initial count value
+        totalCount.innerHTML = count;
+
+        // Function to increment count
+        const handleIncrement = () => {
+            count++;
+            totalCount.innerHTML = count;
+        };
+
+        // Function to decrement count
+        const handleDecrement = () => {
+            count--;
+            totalCount.innerHTML = count;
+        };
+
+        // Add click event to buttons
+        incrementCount.addEventListener("click", handleIncrement);
+        decrementCount.addEventListener("click", handleDecrement);
+    </script>
+</body>
+
+</html>
