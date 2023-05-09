@@ -4,7 +4,29 @@ let count = 0;
 let currlevel = 0;
 let maxlevel = 10;
 let gamehtml = document.getElementById("game");
-let html0 = `<button id="Button2"class=" ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button2</button>
+let html0 = `
+
+
+
+  <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+    
+    <div class="text-center lg:w-2/3 w-full">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+Welcome to the Avengers Hunt Game!</h1>
+      <p class="mb-8 leading-relaxed">
+      Are you ready to join the ranks of the mighty Avengers and put your skills to the test? This game is designed to challenge and inspire you, with puzzles and challenges that will test your knowledge, skills, and creativity.
+<br>
+Each level of the game will take you on a journey through the Marvel Cinematic Universe, with challenges and puzzles inspired by the different characters, movies, and stories of this epic franchise. From math and logic puzzles to challenges that require keen observation and attention to detail, this game has it all.
+<br>
+So, are you ready to suit up and join the Avengers on this exciting adventure? Let's get started and see if you have what it takes to become a true hero!
+</p>
+      <div class="flex justify-center">
+        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">login</button>
+
+        <button id="Button2"class=" ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Start Game </button>
+      </div>
+    </div>
+  </div>
                                                 
                                                 
                                                 `;
@@ -387,7 +409,8 @@ function stopwatch() {
         let h = (hr < 10) ? "0" + hr : hr;
         let m = (min < 10) ? "0" + min : min;
         let s = (sec < 10) ? "0" + sec : sec;
-        displaytime.innerHTML = `${h} : ${m} : ${s}`;
+        if (currlevel !== 0)
+                displaytime.innerHTML = `${h} : ${m} : ${s}`;
         leveltime[currlevel] = [sec, min, hr];
         // console.log(leveltime[currlevel]);
         localStorage.setItem("timestore", JSON.stringify(leveltime));
@@ -556,7 +579,7 @@ function work() {
                                         "answerinput"
                                 ).value;
                         let check = ans.toLowerCase();
-                        if (check == "doctor strange" || "doctorstrange") {
+                        if (check == "doctor strange" || check == "doctorstrange") {
                                 setlevel(8);
                         }
                         ans.value = "";
